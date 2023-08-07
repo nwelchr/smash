@@ -1,7 +1,6 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { combineReducers } from "@reduxjs/toolkit";
+import chars from "./characters";
 
-const indexSlice = createSlice({
-  name: "index",
-  initialState: [],
-  reducers: {},
-});
+const rootReducer = combineReducers({ chars });
+
+export default rootReducer;

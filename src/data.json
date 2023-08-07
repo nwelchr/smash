@@ -1,6 +1,8 @@
 {
     "wario": {
+        "id": 1,
         "name": "Wario",
+        "image": "https://ssb.wiki.gallery/images/thumb/0/04/Wario_SSBU.png/1200px-Wario_SSBU.png",
         "moveset": {
             "jab": {
                 "name": "Jab",
@@ -20,7 +22,9 @@
         }
     },
     "bayonetta": {
+        "id": 2,
         "name": "Bayonetta",
+        "image": "https://www.smashbros.com/assets_v2/img/fighter/bayonetta/main.png",
         "moveset": {
             "jab": {
                 "name": "Jab",
@@ -40,7 +44,9 @@
         }
     },
     "luigi": {
+        "id": 3,
         "name": "Luigi",
+        "image": "https://www.smashbros.com/assets_v2/img/fighter/luigi/main.png",
         "moveset": {
             "jab": {
                 "name": "Jab",

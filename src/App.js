@@ -1,24 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+import CharList from "./components/CharList";
+import CharDisplay from "./components/CharDisplay";
+import styled from "styled-components";
+import { useSelector } from "react-redux";
+
+const Container = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+`;
 
 function App() {
+  const currCharId = useSelector((state) => state.chars.currCharId);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container>
+      {currCharId ? <CharDisplay charId={currCharId} /> : <CharList />}
+    </Container>
   );
 }
 
