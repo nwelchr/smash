@@ -13,11 +13,11 @@ const CharData = ({ data }) => {
   return (
     <ul>
       {Object.values(data.moveset).map((move) => (
-        <li>
+        <li key={move.name}>
           {move.name}:
           <ul>
-            <li>{move.startup} frames startup</li>
-            <li>{move.damage} damage</li>
+            <li key={move.startup}>{move.startup} frames startup</li>
+            <li key={move.damage}>{move.damage} damage</li>
           </ul>
         </li>
       ))}
