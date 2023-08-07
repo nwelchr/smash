@@ -1,0 +1,62 @@
+{
+    "wario": {
+        "name": "Wario",
+        "moveset": {
+            "jab": {
+                "name": "Jab",
+                "startup": 6,
+                "damage": 4
+            },
+            "ftilt": {
+                "name": "Forward Tilt",
+                "startup": 12,
+                "damage": 13
+            },
+            "usmash": {
+                "name": "Up Smash",
+                "startup": 11,
+                "damage": 17
+            }
+        }
+    },
+    "bayonetta": {
+        "name": "Bayonetta",
+        "moveset": {
+            "jab": {
+                "name": "Jab",
+                "startup": 9,
+                "damage": 1.4
+            },
+            "ftilt": {
+                "name": "Forward Tilt",
+                "startup": 12,
+                "damage": 3
+            },
+            "usmash": {
+                "name": "Up Smash",
+                "startup": 18,
+                "damage": 17
+            }
+        }
+    },
+    "luigi": {
+        "name": "Luigi",
+        "moveset": {
+            "jab": {
+                "name": "Jab",
+                "startup": 2,
+                "damage": 2
+            },
+            "ftilt": {
+                "name": "Forward Tilt",
+                "startup": 5,
+                "damage": 9
+            },
+            "usmash": {
+                "name": "Up Smash",
+                "startup": 9,
+                "damage": 14
+            }
+        }
+    }
+}
