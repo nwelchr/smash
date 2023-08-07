@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
 import styled from "styled-components";
-import Char from "./Char";
+import FullChar from "./FullChar";
 import Sidebar from "./Sidebar";
 
 const Main = styled.main`
@@ -15,7 +15,7 @@ const CharDisplay = ({ charId }) => {
   return (
     <Main>
       <Sidebar />
-      <Char key={char.id} char={char} />
+      <FullChar key={char.id} char={char} />
     </Main>
   );
 };
