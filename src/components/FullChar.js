@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { selectChar } from "../reducers/characters";
+import Notes from "./Notes";
 
 const CharImg = styled.img`
   width: 400px;
@@ -7,6 +8,11 @@ const CharImg = styled.img`
 
 const CharName = styled.h2`
   text-align: center;
+`;
+
+const Column = styled.div`
+  display: flex;
+  flex-direction: column;
 `;
 
 const CharData = ({ data }) => {
@@ -30,7 +36,10 @@ const FullChar = ({ char }) => {
     <>
       <CharName>{char.name}</CharName>
       <CharImg src={char.image} alt={char.name} />
-      <CharData data={char} />
+      <Column>
+        <CharData data={char} />
+        <Notes data={char} />
+      </Column>
     </>
   );
 };
