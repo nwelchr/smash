@@ -9,8 +9,13 @@ const charSlice = createSlice({
     selectChar: (state, action) => {
       state.currCharId = action.payload;
     },
+    saveNotes: (state, action) => {
+      console.log(state, action);
+      state.charData.find((char) => char.id === state.currCharId).notes =
+        action.payload;
+    },
   },
 });
 
-export const { selectChar } = charSlice.actions;
+export const { selectChar, saveNotes } = charSlice.actions;
 export default charSlice.reducer;

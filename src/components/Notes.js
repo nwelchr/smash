@@ -1,31 +1,48 @@
 import { useEffect, useState, useRef } from "react";
 import styled from "styled-components";
+import { useDispatch } from "react-redux";
+import { saveNotes } from "../reducers/characters";
+
+const ColumnForm = styled.form`
+  display: flex;
+  flex-direction: column;
+`;
 
 const Button = styled.button`
   background-color: #ccc;
   height: 20px;
 `;
 
-const NotesForm = ({ charId, closeModal }) => {
+const ModalContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
+const CloseButton = styled.button`
+  align-self: flex-end;
+`;
+
+const NotesForm = ({ charId, initialNotes, closeModal }) => {
   const [notes, setNotes] = useState("");
+  const dispatch = useDispatch();
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(notes);
     setNotes("");
+    dispatch(saveNotes(notes));
     closeModal();
   };
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
+    <>
+      <ColumnForm onSubmit={handleSubmit}>
         <label htmlFor="notes">Notes</label>
         <input
-          value={notes}
+          defaultValue={initialNotes}
           onChange={(e) => setNotes(e.target.value)}
           placeholder="Notes"
         />
         <button type="submit">Save</button>
-      </form>
-    </div>
+      </ColumnForm>
+    </>
   );
 };
 
@@ -59,10 +76,19 @@ const Notes = ({ data }) => {
 
   return (
     <>
-      <Button onClick={openModal}>Notes</Button>
+      {data.notes && <p>Notes: {data.notes}</p>}
+      <Button onClick={openModal}>
+        {data.notes ? "Edit Notes" : "Add Notes"}
+      </Button>
       <dialog ref={ref} open={isModalOpen}>
-        <button onClick={closeModal}>Close</button>
-        <NotesForm charId={data.id} closeModal={closeModal} />
+        <ModalContainer>
+          <CloseButton onClick={closeModal}>X</CloseButton>
+          <NotesForm
+            charId={data.id}
+            initialNotes={data.notes}
+            closeModal={closeModal}
+          />
+        </ModalContainer>
       </dialog>
     </>
   );
